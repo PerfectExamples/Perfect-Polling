@@ -1,0 +1,20 @@
+{{>header}}
+
+<h1>Vote!</h1>
+<p><a href="/">Back</a></p>
+
+{{#voted}}
+<p>Thanks for voting!!!<br>
+<a href="/poll/results">Poll Results</a></p>
+{{/voted}}
+
+<form method="POST" action="?">
+<table class="table table-striped">
+<tr><td><label><input type="radio" name="option" value="CocoaPods"> CocoaPods</label></td></tr>
+<tr><td><label><input type="radio" name="option" value="Carthage"> Carthage</label></td></tr>
+<tr><td><label><input type="radio" name="option" value="SPM"> Swift Package Manager (SPM)</label></td></tr>
+<tr><td><label><input type="radio" name="option" value="Who Cares?"> Who Cares?</label></td></tr>
+</table>
+<input type="submit" name="vote" value="Vote!">
+</form>
+{{>footer}}

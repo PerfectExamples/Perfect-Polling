@@ -1,0 +1,18 @@
+{{>header}}
+
+<h1>Poll Results</h1>
+
+<p><a href="/poll/results">Reload Poll Results</a></p>
+
+
+<table class="table table-striped">
+{{#poll}}
+<tr>
+<td>{{option}}</td>
+<td>{{result}} %</td>
+</tr>
+{{/poll}}
+</table>
+
+
+{{>footer}}

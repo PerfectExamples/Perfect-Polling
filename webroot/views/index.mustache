@@ -1,0 +1,14 @@
+{{>header}}
+
+{{^authenticated}}
+<h1>Hi! Sign up today to vote!</h1>
+{{/authenticated}}
+{{#authenticated}}
+<h1>Hi!</h1>
+<p><a href="/poll/vote">Vote now!</a></p>
+<p><a href="/poll/results">Poll Results</a></p>
+{{/authenticated}}
+
+
+
+{{>footer}}
