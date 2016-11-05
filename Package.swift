@@ -20,7 +20,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "Poll",
+	name: "Polling",
 	targets: [],
 	dependencies: [
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-Turnstile-SQLite.git", majorVersion: 0, minor: 0),
