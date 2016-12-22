@@ -41,24 +41,24 @@
 
 Perfect空启动项目
 
-这个库有一个空白的Perfect项目，可以克隆来作为新工程，它通过Swift Package Manager编译，并产生一个独立的HTTP可执行文件。
+本代码用于软件工程师在此基础之上开发Web服务器及其应用。您可以直接克隆本项目进行后续开发。该项目通过SPM软件包管理器编译，并能够生成一个可以独立运行的HTTP服务器。
 
-###与Swift的兼容性
-此工程通过[Swift.org](http://swift.org/)获取Swift 3.0工具，在Xcode 8.0+ 或在Linux系统中使用
+###Swift的兼容性
+本项目必须使用Swift 3.0工具链及Xcode 8.0+，或者通过Linux安装[Swift.org](http://swift.org/)。
 
-## Swift version note:
+## Swift 版本注意事项:
 
-由于最近Xcode 8的bug，如果你想直接在Xcode运行，我们建议安装swiftenv和Swift 3.0.1预览版工具。
+因为Xcode 8发行后出现了一些问题，如果您直接在Xcode下使用，我们建议安装swiftenv，以及 Swift 3.0.1 工具集预览版。
 
 ```
 # after installing swiftenv from https://swiftenv.fuller.li/en/latest/
 swiftenv install https://swift.org/builds/swift-3.0.1-preview-1/xcode/swift-3.0.1-PREVIEW-1/swift-3.0.1-PREVIEW-1-osx.pkg
 ```
-另外，在"Project Settings"的"Library Search Paths"中添加 $(PROJECT_DIR)递归
+还有一种方式，就是在您Xcode中增加一个配置，即在项目设置“Project Settings”里面，查找条目“Library Search Paths”，然后将这个条目配置为“$(PROJECT_DIR)”，并且⚠️配置为⚠️递归形式“recursive”。这样就会通知编译器根据项目所在文件夹进行递归式检索项目所需要的函数库和参考引用。
 
 ## 编译&运行
 
-以下命令将会克隆并编译一个空的初始项目，并通过端口8181启动服务。
+为了创建项目并且试验运行，请在终端命令行中输入以下内容。完成后就可以实现一个在本地网络8181端口工作的Web服务器。
 
 ```
 git clone https://github.com/PerfectlySoft/PerfectTemplate.git
@@ -75,11 +75,11 @@ swift build
 Starting HTTP server on 0.0.0.0:8181 with document root ./webroot
 ```
 
-这意味着服务器已经运行起来了并正等待连接。通过[http://localhost:8181/](http://127.0.0.1:8181/)来问个好吧~，按下control-c组合键可以关闭服务。
+这表明服务器已经准备好并且等待连接了。请访问[http://localhost:8181/](http://127.0.0.1:8181/) 来查看欢迎信息。在终端命令行上输入control-c组合键即可停止Web服务
 
 ## 开始内容
 
-模板文件包含了一个非常简单的"hello, world!"例子。
+以下的源代码展示了一个最简单的“你好，世界！”样例。
 
 ```swift
 import PerfectLib
@@ -125,12 +125,11 @@ do {
 
 ## 问题
 
-我们正在使用JIRA来收集所有错误和支持相关的问题，因此，GitHub的问题已被禁用。</br>
+目前我们已经把所有错误报告合并转移到了JIRA上，因此github原有的错误汇报功能不能用于本项目。
 
-如果您发现了错误，bug，或者任何建议，您可以移步[http://jira.perfect.org:8080/servicedesk/customer/portal/1](http://jira.perfect.org:8080/servicedesk/customer/portal/1) 并提交它。
+您的任何宝贵建意见或建议，或者发现我们的程序有问题，欢迎您在这里[http://jira.perfect.org:8080/servicedesk/customer/portal/1](http://jira.perfect.org:8080/servicedesk/customer/portal/1)告诉我。</br>
 
-在[http://jira.perfect.org:8080/projects/ISS/issues](http://jira.perfect.org:8080/projects/ISS/issues) 可以找到一个全面的开放问题列表。
-
+目前问题清单请参考以下链接：[http://jira.perfect.org:8080/projects/ISS/issues](http://jira.perfect.org:8080/projects/ISS/issues)
 
 ## 更多信息
-欲了解更多关于Perfect项目的信息，请访问 [perfect.org](http://perfect.org).
+关于Perfect更多内容，请参考[perfect.org](http://perfect.org)官网。
